@@ -1,0 +1,30 @@
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.title-section {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.tarefa-card {
+    background-color: #f0f0f0;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.tarefa-concluida {
+    background-color: #83cb80;
+    border: 1px solid #66b269;
+}
+
+.footer-main {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

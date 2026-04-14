@@ -1,0 +1,147 @@
+/* ============================================================================
+   ATOM THEME RESET
+   Baseado em: Andy Bell's Modern Reset + Josh Comeau's CSS Reset
+   Prioridades: box model correto, sem margens padrão, herança de fonte,
+                media responsiva, acessibilidade, motion preference.
+   ============================================================================ */
+
+/* Box model universal */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Root */
+:root {
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust:    100%;
+    text-size-adjust:         100%;
+    tab-size: 4;
+    hanging-punctuation: first last;
+}
+
+/* Remove margens e paddings padrão */
+* {
+    margin:  0;
+    padding: 0;
+}
+
+/* Body */
+body {
+    min-height: 100svh;
+    line-height: 1.5;
+    -webkit-font-smoothing:  antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeSpeed;
+}
+
+/* Mídia — bloco, responsiva por padrão */
+img,
+picture,
+video,
+canvas,
+svg {
+    display:   block;
+    max-width: 100%;
+}
+
+/* Imagens — proporção mantida e alt visível como itálico se quebrada */
+img {
+    height:     auto;
+    font-style: italic;
+}
+
+/* Formulários herdam a fonte do documento */
+input,
+button,
+textarea,
+select,
+optgroup {
+    font: inherit;
+    color: inherit;
+}
+
+/* Textos longos não vazam do container */
+p {
+    margin-bottom: 0 !important;
+}
+p,
+h1, h2, h3, h4, h5, h6,
+li,
+figcaption {
+    overflow-wrap: break-word;
+    margin-bottom: 0;
+}
+
+/* Headings sem peso excessivo (o projeto define via variáveis CSS) */
+h1, h2, h3, h4, h5, h6 {
+    font-size:   inherit;
+    font-weight: inherit;
+}
+
+/* Links neutros — o projeto estiliza conforme necessário */
+a {
+    color:           inherit;
+    text-decoration: none;
+}
+
+/* Listas sem estilo */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Tabelas colapsadas */
+table {
+    border-collapse: collapse;
+    border-spacing:  0;
+}
+
+/* Botões sem estilo padrão */
+button {
+    background:    transparent;
+    border:        none;
+    border-radius: 0;
+    cursor:        pointer;
+}
+
+/* Fieldset */
+fieldset {
+    border:  none;
+    padding: 0;
+    margin:  0;
+}
+
+/* Cursor em elementos interativos */
+button,
+[role="button"],
+label[for],
+select {
+    cursor: pointer;
+}
+
+/* Hidden semântico */
+[hidden] {
+    display: none !important;
+}
+
+/* Scrollbar behavior suave (quando não há preferência de movimento reduzido) */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Respeita preferência do usuário por movimento reduzido */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration:        0.01ms !important;
+        animation-iteration-count: 1      !important;
+        transition-duration:       0.01ms !important;
+    }
+}
