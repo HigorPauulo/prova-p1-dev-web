@@ -26,3 +26,56 @@ function removerTarefa(id) {
     const item = document.getElementById(id);
     item.remove();
 }
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+
+function App() {
+    return (
+        <div>
+            <Header />
+            <Main />
+            <Footer />
+        </div>
+    );
+}
+
+function Header() {
+        return (
+        <header className="bg-primary text-white p-3 text-center">
+            <h1>Gerenciador de Tarefas</h1>
+        </header>
+    );
+}
+
+function Main() {
+    return (
+        <main className="py-5">
+            <div className="container">
+                <div className="row row-gap-5">
+                    <div className="col-12 col-md-5">
+                        <h2 className="text-start text-md-center title-section mb-4">Adicionar Tarefa</h2>
+                        <div className="input-group">
+                            <input type="text" className="form-control" placeholder="Digite a tarefa" id="tarefa" />
+                            <button className="btn btn-primary" onClick={adicionarTarefa}>Adicionar</button>
+                        </div>
+                    </div>
+
+                    <div className="col-12 col-md-7">
+                        <h2 className="text-start text-md-center title-section mb-4">Lista de Tarefas</h2>
+                        <ul className="list-group d-flex flex-column gap-2" id="lista"></ul>
+                    </div>
+
+                </div>            
+            </div>
+        </main>
+    );
+}
+
+function Footer() {
+    return (
+        <footer className="footer-main bg-dark text-white py-3 text-center">
+            <p>Gerenciador de Tarefas - 2026</p>
+        </footer>
+    );
+}
